@@ -1,0 +1,451 @@
+1. JAMA Neurol. 2025 Apr 14. doi: 10.1001/jamaneurol.2025.0552. Online ahead of 
+print.
+Risk Factors Associated With Late-Onset Epilepsy in Dementia and Mild Cognitive 
+Impairment.
+Zawar I(1), Quigg M(1)(2), Johnson EL(3), Ghosal S(4), Manning C(5), Kapur J(1).
+Author information:
+(1)Comprehensive Epilepsy Program, Department of Neurology, University of 
+Virginia, Charlottesville.
+(2)Sleep Center, Department of Neurology, University of Virginia, 
+Charlottesville.
+(3)Epilepsy Division, Department of Neurology, Johns Hopkins, Baltimore, 
+Maryland.
+(4)Division of Biostatistics, Department of Public Health Sciences, University 
+of Virginia, Charlottesville.
+(5)Memory Disorders Program, Department of Neurology, University of Virginia, 
+Charlottesville.
+IMPORTANCE: The risk of developing epilepsy substantially increases after the 
+age of 60 years (late-onset epilepsy [LOE]), particularly in people with 
+cognitive decline ([PWCD] ie, dementia and/or mild cognitive impairment). 
+Epilepsy is associated with worse cognitive and mortality outcomes in PWCD. 
+Identifying PWCD at risk for developing LOE can facilitate early screening and 
+treatment of epilepsy.
+OBJECTIVE: To investigate factors associated with LOE in PWCD.
+DESIGN, SETTING, AND PARTICIPANTS: This longitudinal, multicenter study is based 
+on participants from 39 US Alzheimer's Disease Research Centers from September 
+2005 through December 2021. Of 44 713 participants, 25 119 PWCD were identified. 
+Of these, 14 685 were included who did not have epilepsy at enrollment, had 2 or 
+more visits, and were 60 years or older at the most recent follow-up.
+EXPOSURE: The association between various factors and LOE development in PWCD 
+was investigated.
+MAIN OUTCOMES AND MEASURES: The primary outcome was LOE, defined as seizures 
+starting at or after 60 years of age. Those who did not develop LOE but were 60 
+years or older at follow-up served as controls. A multivariable Cox regression 
+analysis assessed the association between various factors and LOE. Independent 
+variables included age, sex, and socioeconomic factors (education, race, 
+ethnicity), cardiovascular risks (hypertension, diabetes, hyperlipidemia), 
+cerebrovascular disease (stroke or history of transient ischemic attack [TIA]), 
+other neurologic comorbidities (Parkinson disease [PD], traumatic brain injury), 
+cognition (age at dementia onset, dementia severity, type of dementia [Alzheimer 
+disease (AD) vs non-AD]), genetics (apolipoprotein E4 [APOE4] status), lifestyle 
+(alcohol misuse, smoking), and depression.
+RESULTS: Of the 14 685 participants (7355 female [50%] and 7330 male [50%]; mean 
+[SD] age, 73.8 [8.5] years) who met the inclusion criteria, 221 participants 
+(1.5%) developed LOE during follow-up. After adjusting for demographics, 
+cardiovascular risks, neurologic comorbidities, genetics, cognitive factors, and 
+depression, the following were associated with a higher risk of developing LOE: 
+APOE4 allele (adjusted hazard ratio [aHR], 1.39; 95% CI, 1.04-1.86; P = .03), 
+dementia onset before age 60 years (aHR, 2.46; 95% CI, 1.53-3.95; P < .001), 
+worse cognition (aHR, 2.35; 95% CI, 1.97-2.79; P < .001), AD dementia subtype 
+(aHR, 1.68; 95% CI, 1.13-2.49; P = .01), stroke/TIA (aHR, 2.03; 95% CI, 
+1.37-3.01; P < .001), and PD (aHR, 2.53; 95% CI, 1.08-5.95; P = .03). In 
+sensitivity analysis, using an alternative LOE definition of epilepsy onset 
+after age 65 years revealed the same factors associated with LOE.
+CONCLUSION AND RELEVANCE: This study showed that the APOE4 allele, dementia 
+onset before age 60 years, AD dementia subtype, worse cognition, stroke/TIA, and 
+PD are associated with LOE development in PWCD. PWCD with these risk factors may 
+be considered for routine screening with an electroencephalogram for early 
+identification of LOE.
+DOI: 10.1001/jamaneurol.2025.0552
+PMID: 40227723
+2. J Cell Physiol. 2025 Apr;240(4):e70034. doi: 10.1002/jcp.70034.
+Methods to Assess Neuronal Primary Cilia Electrochemical Signaling.
+DeCaen PG(1), Kimura LF(1).
+Author information:
+(1)Feinberg School of Medicine, Department of Pharmacology, Northwestern 
+University, Chicago, Illinois, USA.
+Primary cilia are polymodal sensory organelles which project from the apical 
+side of polarized cells. They are found in all brain hemispheres but are most 
+pronounced in neurons, which comprise the granular layers of the hippocampus and 
+cerebellum. Pathogenic variants in genes which encode primary cilia components 
+are responsible for neuronal ciliopathies-a group of central nervous system 
+disorders characterized by neurodevelopmental conditions such as intellectual 
+disability, seizure, ataxia, and sensory deficits. In the hippocampus, neuronal 
+primary cilia form chemical synapses with axons and their membranes are 
+populated with unique sets of ion channels and G protein-coupled receptors 
+(GPCRs). Primary cilia are small and privileged compartments that are 
+challenging organelles to study. In detail, we describe cilia electrophysiology 
+methods and the use of cilia-specific fluorescent sensors to assay neuronal 
+polycystin channel function and serotonergic receptor signaling, respectively. 
+These tools allow researchers to assay calcium, cAMP and channel-related 
+signaling pathways in isolated neurons in real-time and in semi-quantitative 
+terms, while enhancing our understanding of this understudied organelle and its 
+dysregulation in ciliopathy disease states.
+© 2025 The Author(s). Journal of Cellular Physiology published by Wiley 
+Periodicals LLC.
+DOI: 10.1002/jcp.70034
+PMID: 40227694 [Indexed for MEDLINE]
+3. JAMA Netw Open. 2025 Apr 1;8(4):e254852. doi:
+10.1001/jamanetworkopen.2025.4852.
+Housing Instability and Type 2 Diabetes Outcomes.
+Berkowitz SA(1)(2)(3), Ochoa A(4), Kuhn ML(5), Dankovchik J(4), Donovan JM(4), 
+LaPoint M(2)(3), Gao M(6), Basu S(7), Hudgens MG(6), Gold R(4)(8).
+Author information:
+(1)Division of General Medicine and Clinical Epidemiology, Department of 
+Medicine, University of North Carolina at Chapel Hill School of Medicine, Chapel 
+Hill.
+(2)Center for Health Promotion and Disease Prevention, University of North 
+Carolina at Chapel Hill School of Medicine, Chapel Hill.
+(3)Cecil G. Sheps Center for Health Services Research, University of North 
+Carolina at Chapel Hill, Chapel Hill.
+(4)Department of Research, OCHIN, Portland, Oregon.
+(5)Department of Social Medicine, Center for Health Equity Research, University 
+of North Carolina at Chapel Hill, Chapel Hill.
+(6)Department of Biostatistics, University of North Carolina at Chapel Hill, 
+Chapel Hill.
+(7)Clinical Product Development, Waymark Care, San Francisco, California.
+(8)Kaiser Permanente Northwest Center for Health Research, Portland, Oregon.
+IMPORTANCE: Housing instability may worsen control of type 2 diabetes outcomes.
+OBJECTIVE: To estimate the association between stable vs unstable housing and 
+type 2 diabetes outcomes.
+DESIGN, SETTING, AND PARTICIPANTS: This cohort study analyzed electronic health 
+record data of adults with type 2 diabetes from US community-based health 
+centers from June 2016 to April 2023. Targeted minimum loss estimation was used 
+to examine the association between having vs not having housing instability and 
+subsequent type 2 diabetes outcomes, adjusting for age, date of housing 
+instability assessment, sex, race and ethnicity (social constructs that may 
+indicate the experience of racism), language, comorbidities, health insurance, 
+income, and census-tract level social vulnerability index. Analyses were 
+conducted from July 2023 to September 2024.
+EXPOSURE: Report of housing stability or instability.
+MAIN OUTCOMES AND MEASURES: Mean hemoglobin A1c (HbA1c) level was the primary 
+outcome; secondary outcomes included systolic and diastolic blood pressure (SBP 
+and DBP) and low-density lipoprotein (LDL) cholesterol. The primary time point 
+was 12 months after initial assessment, with secondary time points at 6, 18, 24, 
+30, and 36 months.
+RESULTS: A total of 90 233 individuals were included (mean [SD] age, 55.4 [13.7] 
+years; 50 772 female [56.3%]; 25 602 Black [28.4%], 27 277 Hispanic [31.4%], 
+51 720 White [57.3%]); 28 784 individuals (31.9%) had a primary language other 
+than English, and 15 713 (17.4%) reported housing instability. Prior to first 
+housing instability assessment, mean (SD) HbA1c was 7.64% (1.94%), mean (SD) SBP 
+was 130.0 (13.5) mm Hg, mean (SD) DBP was 78.2 (7.8) mm Hg, and mean (SD) LDL 
+cholesterol was 101.1 (35.2) mg/dL. We estimated had all individuals experienced 
+stable housing, compared with unstable housing, mean HbA1c would have been 0.12% 
+lower (95% CI, -0.16% to -0.07%; P < .001), SBP would have been 0.77 mm Hg lower 
+(95% CI, -1.14 mm Hg to -0.39 mm Hg; P < .001), and DBP 0.27 mm Hg lower (95% 
+CI, -0.49 mm Hg to -0.06 mm Hg; P = .01), but LDL cholesterol would not have 
+been lower (estimated difference, -1.46 mg/dL, 95% CI, -2.96 mg/dL to 0.03 
+mg/dL; P = .05) at 12 months, with numerically similar results at other time 
+points.
+CONCLUSIONS AND RELEVANCE: In this cohort study, housing stability was 
+associated with small differences in type 2 diabetes outcomes; combining housing 
+stability interventions with other diabetes interventions may be needed to 
+improve type 2 diabetes outcomes more substantially.
+DOI: 10.1001/jamanetworkopen.2025.4852
+PMID: 40227681 [Indexed for MEDLINE]
+4. JAMA. 2025 Apr 14. doi: 10.1001/jama.2025.1597. Online ahead of print.
+Cataracts: A Review.
+Chen SP(1), Woreta F(2), Chang DF(1).
+Author information:
+(1)Department of Ophthalmology, University of California, San Francisco.
+(2)Department of Ophthalmology, Wilmer Eye Institute, Johns Hopkins University 
+School of Medicine, Baltimore, Maryland.
+IMPORTANCE: Age-related cataract, defined as progressive opacification or 
+clouding of the eye's natural lens, is a leading cause of visual disability and 
+blindness. Cataract surgery is one of the most commonly performed procedures in 
+high-income countries. More than 3.5 million cataract operations are performed 
+annually in the US.
+OBSERVATIONS: Older age is the primary risk factor for cataracts, with 
+approximately two-thirds of the population older than 80 years affected. As the 
+population ages, the number of people with cataracts in the US is expected to 
+increase to 50 million by 2050. Additional risk factors for cataracts include a 
+hereditary or genetic predisposition, certain medications (corticosteroids), 
+ocular trauma, significant UV exposure or radiation therapy, and certain medical 
+conditions such as uncontrolled diabetes, retinitis pigmentosa, Down syndrome, 
+and congenital rubella. Painless, progressive blurring of vision and visual 
+glare are common symptoms of cataracts. Cataracts are diagnosed during an eye 
+examination by an ophthalmologist or optometrist. Surgery to remove the cataract 
+and implant a permanent intraocular lens (IOL) is indicated if visual impairment 
+impedes activities of daily living and is associated with lower rates of falls 
+(>30%) and dementia (20%-30%). Most cataract operations are performed with 
+topical anesthesia. Therefore, patients do not require preoperative general 
+medical testing such as bloodwork or electrocardiogram, and do not need to 
+discontinue anticoagulants for cataract surgery. Systemic α1-adrenergic 
+antagonists for symptomatic benign prostatic hyperplasia, such as tamsulosin, 
+increase the risk of surgical complications and some ophthalmologists 
+temporarily discontinue the drug preoperatively. Intraocular antibiotics, such 
+as moxifloxacin or cefuroxime, delivered intraoperatively have reduced the rates 
+of sight-threatening postsurgical endophthalmitis from 0.07% to 0.02%. In 
+addition to reversing and preventing progressive vision loss, cataract surgery 
+can reduce dependence on eyeglasses. These optional refractive benefits are 
+achieved with advanced technology IOL designs, such as multifocal IOLs. However, 
+multifocal and other advanced technology refractive IOLs are associated with 
+increased costs that are not covered by medical insurance.
+CONCLUSIONS AND RELEVANCE: Cataracts are common among older adults and may cause 
+visual disability and blindness without treatment. Cataract surgery reverses and 
+prevents progressive vision loss, and advanced technology lens implants 
+facilitate reduced dependence on eyeglasses.
+DOI: 10.1001/jama.2025.1597
+PMID: 40227658
+5. Cancers (Basel). 2025 Mar 26;17(7):1107. doi: 10.3390/cancers17071107.
+Refining Endoscopic and Combined Surgical Strategies for Giant Pituitary 
+Adenomas: A Tertiary-Center Evaluation of 49 Cases over the Past Year.
+Emengen A(1), Yilmaz E(2), Gokbel A(2), Uzuner A(3), Balci S(4), Tavukcu Ozkan 
+S(5), Ergen A(6), Caklili M(3), Cabuk B(3), Anik I(3), Ceylan S(1).
+Author information:
+(1)Department of Neurosurgery, Bahcesehir University School of Medicine, 34734 
+Istanbul, Turkey.
+(2)Department of Neurosurgery, VM Pendik Medical Park Hospital, 34899 Istanbul, 
+Turkey.
+(3)Department of Neurosurgery, Kocaeli University School of Medicine, 41380 
+Kocaeli, Turkey.
+(4)Department of Biostatistics and Medical Informatics, Kocaeli University, 
+41380 Kocaeli, Turkey.
+(5)Department of Intensive Care Unit, VM Pendik Medical Park Hospital, 34899 
+Istanbul, Turkey.
+(6)Department of Neurosurgery, Kocaeli State Hospital, 41300 Kocaeli, Turkey.
+Background/Objectives: Giant pituitary adenomas (GPAs) pose significant surgical 
+challenges due to their large size, parasellar/suprasellar extensions, and 
+proximity to critical neurovascular structures. Although the endoscopic 
+endonasal approach (EEA) is preferred for pituitary tumors, achieving gross 
+total resection (GTR) in GPAs remains difficult. Additional transcranial 
+approaches may improve resection rates while minimizing morbidity. This study 
+evaluates the impact of endoscopic and combined surgical approaches on resection 
+outcomes using a classification system previously defined in GPA patients 
+treated over the past year. Methods: Among 517 pituitary adenomas treated in our 
+clinic between September 2023 and September 2024, 49 GPA patients underwent 
+endoscopic endonasal, transcranial, or combined surgery. Their medical records 
+and surgical videos were retrospectively reviewed. Data included demographics, 
+symptoms, imaging, surgical details, and follow-up outcomes. Tumor resection 
+rates were analyzed based on the "landmark-based classification", considering 
+radiological and pathological features and surgical approach. Results: The mean 
+age was 45.5 years (female/male: 14/35). Zone distribution was 8 (Zone 1), 21 
+(Zone 2), and 20 (Zone 3). GTR was achieved in 34.6%, near-total resection in 
+36.7%, and subtotal resection in 28.5%. Endoscopic surgery was performed in 41 
+patients, combined surgery in 7, and a transcranial approach in 1. Complications 
+included diabetes insipidus (9/49), cerebrospinal fluid leakage (2/49), apoplexy 
+(2/49), hypocortisolism (3/49), epidural hematoma (1/49), and epistaxis (1/49). 
+Conclusions: While EEA is effective for Zone 1 and 2 GPAs, Zone 3 tumors often 
+require combined or transcranial approaches for better resection. A multimodal 
+strategy optimizes tumor removal while minimizing morbidity. Individualized 
+surgical planning based on tumor classification is crucial for improving 
+outcomes.
+DOI: 10.3390/cancers17071107
+PMID: 40227627
+6. Cancers (Basel). 2025 Mar 26;17(7):1117. doi: 10.3390/cancers17071117.
+Adherence to Antidiabetic Medication and Cardiovascular Outcomes in Cancer 
+Patients: A Nationwide Population-Based Cohort Study.
+Jung MH(1)(2), Jung MK(1)(2), Kim ES(1)(2), Youn JC(1)(2), Lee EY(3), Kang D(4), 
+Kyoung DS(4), Chung WB(1)(2), Jung HO(1)(2), Ihm SH(2)(5), Lee H(6)(7), Ng 
+CT(8), Kim HC(6)(7).
+Author information:
+(1)Division of Cardiology, Department of Internal Medicine, Seoul St. Mary's 
+Hospital, College of Medicine, The Catholic University of Korea, 222, 
+Banpo-daero, Seocho-gu, Seoul 06591, Republic of Korea.
+(2)Catholic Research Institute for Intractable Cardiovascular Disease, College 
+of Medicine, The Catholic University of Korea, Seoul 06591, Republic of Korea.
+(3)Division of Endocrinology and Metabolism, Department of Internal Medicine, 
+Seoul St. Mary's Hospital, College of Medicine, The Catholic University of 
+Korea, Seoul 06591, Republic of Korea.
+(4)Data Science Team, Hanmi Pharm. Co., Ltd., Seoul 05545, Republic of Korea.
+(5)Division of Cardiology, Department of Internal Medicine, Bucheon St. Mary's 
+Hospital, College of Medicine, The Catholic University of Korea, 327, Sosa-ro, 
+Wonmi-gu, Bucheon-si 14647, Republic of Korea.
+(6)Department of Preventive Medicine, Yonsei University College of Medicine, 50, 
+Yonsei-ro, Seodaemun-gu, Seoul 03722, Republic of Korea.
+(7)Cardiovascular and Metabolic Disease Etiology Research Center, Yonsei 
+University College of Medicine, Seoul 03722, Republic of Korea.
+(8)Department of Cardiology, National Heart Centre Singapore, Singapore 169609, 
+Singapore.
+BACKGROUND/OBJECTIVES: Cancer survivors increasingly face cardiovascular disease 
+(CVD), with diabetes as a major risk factor. This study investigates the 
+relationship between adherence to antidiabetic medications and cardiovascular 
+(CV) outcomes in cancer patients.
+METHODS: Using data from the Korean National Health Insurance Service-National 
+Sample Cohort, we assessed the clinical outcomes of adult cancer patients 
+prescribed antidiabetic medications. The study population was categorized based 
+on medication adherence, as determined by the medication possession ratio (MPR): 
+good (MPR ≥ 0.8), moderate (0.5 ≤ MPR < 0.8), and poor (MPR < 0.5) adherence. 
+The primary outcomes included overall and CV mortality, with secondary outcomes 
+encompassing hospitalization for major CVDs and healthcare costs.
+RESULTS: Among the 7928 cancer patients with diabetes, 59.7% were nonadherent 
+(22.1% with moderate and 37.6% with poor adherence). Over a median follow-up of 
+5.7 years, 1462 deaths and 2897 CV events were confirmed. Multivariable adjusted 
+analyses showed a 1.70-fold and 2.11-fold higher risk of overall mortality for 
+the moderate and poor adherence groups, respectively, compared to the good 
+adherence group. For CV mortality, moderate adherence was associated with a 
+1.51-fold higher risk, and poor adherence with a 2.10-fold higher risk. The risk 
+for new-onset CV events increased by 1.32-fold in the moderate adherence group 
+and 1.44-fold in the poor adherence group. The good adherence group also showed 
+significantly lower total healthcare costs compared to the nonadherence group.
+CONCLUSIONS: The present study underscores the importance of adherence to 
+antidiabetic medications in cancer patients, revealing significant associations 
+with decreased mortality, CV events, and healthcare costs.
+DOI: 10.3390/cancers17071117
+PMID: 40227613
+7. Cancers (Basel). 2025 Mar 24;17(7):1080. doi: 10.3390/cancers17071080.
+Immune Checkpoint Inhibitor-Induced Pancreatic Injury (ICI-PI) in Adult Cancer 
+Patients: A Systematic Review and Meta-Analysis.
+Lee CL(1)(2), Riya IJ(3), Piya IJ(3), Muniz TP(2), Butler MO(2), Saibil SD(2).
+Author information:
+(1)Department of Medical Oncology and Hematology, CancerCare Manitoba, 
+University of Manitoba, Winnipeg, MB R2H 2A6, Canada.
+(2)Division of Medical Oncology and Hematology, Princess Margaret Cancer Center, 
+University of Toronto, University Health Network, Toronto, ON M5S 1Z5, Canada.
+(3)Dhaka Medical College Hospital, Dhaka 1000, Bangladesh.
+Background: Immune checkpoint inhibitor-induced pancreatic injury (ICI-PI) is a 
+rare immunotoxicity, with limited data on treatment and long-term outcomes. 
+Methods: PubMed, EMBASE, and Cochrane Library were systematically searched for 
+studies reporting ICI-PI in patients with solid malignancies. ICI-PI was defined 
+as pancreatic inflammation post-ICI exposure, diagnosed via radiologic changes 
+or elevated lipase/amylase levels without other underlying causes. The CTCAE 
+grading system was used. The primary objectives were to assess the frequency, 
+severity, serum abnormalities, management, and long-term outcomes. We conducted 
+a proportional single-arm meta-analysis with a random effects model. Results: 
+The analysis included 25 retrospective studies involving 48,704 patients. Tumor 
+types included thoracic/head and neck (38%), skin (26%), 
+genitourinary/gynecological (18%), gastrointestinal (12%), and others (6%). The 
+median age ranged from 56 to 73 years, with a follow-up from 2.5 to 45.9 months. 
+ICI-PI occurred in 3.60% (95% CI: 1.64-6.28%) of patients, with grade ≥ 3 
+toxicity in 59.45% (95% CI: 35.32-81.37%). The frequency rates of ICI-PI were 
+1.99% for CTLA4 inhibitors, 5.01% for PD(L)1 inhibitors, and 7.44% for 
+combination ICI therapy (p < 0.01). The median time to onset from treatment 
+initiation ranged from 30 to 390 days, and symptom resolution ranged from 55 to 
+84 days. Management included corticosteroids (30.20%), intravenous fluids 
+(22.82%), and hospitalization (30.46%). Chronic complications affected 63.54% 
+(95% CI: 29.03-91.56%), including primarily diabetes mellitus (DM 89.45%; 95% 
+CI: 61.88-100.0%) and exocrine pancreatic insufficiency (EPI 10.55%; 95%: 
+0.0-38.12%). ICI-PI recurrence occurred in 27.2% of those resuming ICI therapy. 
+The objective response rate was 61.7% (95% CI: 55.08-68.17%). Conclusions: 
+ICI-PI, though infrequent, is severe and predisposes patients to chronic 
+complications, including DM and EPI.
+DOI: 10.3390/cancers17071080
+PMID: 40227596
+8. Cancers (Basel). 2025 Mar 24;17(7):1082. doi: 10.3390/cancers17071082.
+Exploring the Genetic Orchestra of Cancer: The Interplay Between Oncogenes and 
+Tumor-Suppressor Genes.
+Singh SR(1), Bhaskar R(2)(3), Ghosh S(1), Yarlagadda B(1), Singh KK(4), Verma 
+P(5), Sengupta S(6), Mladenov M(7), Hadzi-Petrushev N(7), Stojchevski 
+R(8)(9)(10), Sinha JK(1), Avtanski D(8)(9)(10).
+Author information:
+(1)GloNeuro, Sector 107, Vishwakarma Road, Noida 201301, India.
+(2)School of Chemical Engineering, Yeungnam University, Gyeongsan-si 38541, 
+Republic of Korea.
+(3)Research Institute of Cell Culture, Yeungnam University, Gyeongsan-si 38541, 
+Republic of Korea.
+(4)Symbiosis Centre for Information Technology (SCIT), Symbiosis International 
+(Deemed University), Rajiv Gandhi InfoTech Park, Hinjawadi, Pune 411057, India.
+(5)School of Management, BML Munjal University, NH8, Sidhrawali, Gurugram 
+122413, India.
+(6)Department of Gastroenterology, All India Institute of Medical Sciences 
+(AIIMS), New Delhi 110029, India.
+(7)Faculty of Natural Sciences and Mathematics, Institute of Biology, Ss. Cyril 
+and Methodius University, 1000 Skopje, North Macedonia.
+(8)Friedman Diabetes Institute, Lenox Hill Hospital, Northwell Health, New York, 
+NY 10022, USA.
+(9)Feinstein Institutes for Medical Research, Manhasset, NY 11030, USA.
+(10)Donald and Barbara Zucker School of Medicine at Hofstra/Northwell, 
+Hempstead, NY 11549, USA.
+Cancer is complex because of the critical imbalance in genetic regulation as 
+characterized by both the overexpression of oncogenes (OGs), mainly through 
+mutations, amplifications, and translocations, and the inactivation of 
+tumor-suppressor genes (TSGs), which entail the preservation of genomic 
+integrity by inducing apoptosis to counter the malignant growth. Reviewing the 
+intricate molecular interplay between OGs and TSGs draws attention to their cell 
+cycle, apoptosis, and cancer metabolism regulation. In the present review, we 
+discuss seminal discoveries, such as Knudson's two-hit hypothesis, which framed 
+the field's understanding of cancer genetics, leading to the next breakthroughs 
+with next-generation sequencing and epigenetic profiling, revealing novel 
+insights into OG and TSG dysregulation with opportunities for targeted therapy. 
+The key pathways, such as MAPK/ERK, PI3K/AKT/mTOR, and Wnt/β-catenin, are 
+presented in the context of tumor progression. Importantly, we further 
+highlighted the advances in therapeutic strategies, including inhibitors of KRAS 
+and MYC and restoration of TSG function, despite which mechanisms of resistance 
+and tumor heterogeneity pose daunting challenges. A high-level understanding of 
+interactions between OG-TSGs forms the basis for effective, personalized cancer 
+treatment-something to strive for in better clinical outcomes. This synthesis 
+should integrate foundational biology with translation and, in this case, 
+contribute to the ongoing effort against cancer.
+DOI: 10.3390/cancers17071082
+PMID: 40227591
+9. Cancers (Basel). 2025 Mar 23;17(7):1077. doi: 10.3390/cancers17071077.
+The Role of Perirenal Adipose Tissue in Carcinogenesis-From Molecular Mechanism 
+to Therapeutic Perspectives.
+Grigoraș A(1)(2), Amalinei C(1)(2).
+Author information:
+(1)Department of Morphofunctional Sciences I, "Grigore T. Popa" University of 
+Medicine and Pharmacy, 700115 Iasi, Romania.
+(2)Department of Histopathology, Institute of Legal Medicine, 700455 Iasi, 
+Romania.
+Perirenal adipose tissue (PRAT) exhibits particular morphological features, with 
+its activity being mainly related to thermogenesis. However, an expanded PRAT 
+area seems to play a significant role in cardiovascular diseases, diabetes 
+mellitus, and chronic kidney disease pathogenesis. Numerous studies have 
+demonstrated that PRAT may support cancer progression and invasion, mainly in 
+obese patients. The mechanism underlying these processes is of dysregulation of 
+PRAT's secretion of adipokines and pro-inflammatory cytokines, such as leptin, 
+adiponectin, chemerin, apelin, omentin-1, vistatin, nesfatin-1, and other 
+pro-inflammatory cytokines, modulated by tumor cells. Cancer cells may also 
+induce a metabolic reprogramming of perirenal adipocytes, leading to increased 
+lipids and lactate transfer to the tumor microenvironment, contributing to 
+cancer growth in a hypoxic milieu. In addition, the PRAT browning process has 
+been specifically detected in renal cell carcinoma (RCC), being characterized by 
+upregulated expression of brown/beige adipocytes markers (UCP1, PPAR-ɣ, c/EBPα, 
+and PGC1α) and downregulated white fat cells markers, such as LEPTIN, SHOX2, 
+HOXC8, and HOXC9. Considering its multifaceted role in cancer, modulation of 
+PRAT's role in tumor progression may open new directions for oncologic therapy 
+improvement. Considering the increasing evidence of the relationship between 
+PRAT and tumor cells, our review aims to provide a comprehensive analysis of the 
+perirenal adipocytes' impact on tumor progression and metastasis.
+DOI: 10.3390/cancers17071077
+PMID: 40227577
+10. Phys Eng Sci Med. 2025 Apr 14. doi: 10.1007/s13246-025-01539-9. Online ahead
+of  print.
+What do users in a polycystic ovary syndrome (PCOS) forum think about the 
+treatments they tried: Analysing treatment sentiment using machine learning.
+Emanuel RHK(1), Docherty PD(2)(3), Lunt H(4), Campbell RE(5).
+Author information:
+(1)Department of Mechanical Engineering, University of Canterbury, Christchurch, 
+New Zealand.
+(2)Department of Mechanical Engineering, University of Canterbury, Christchurch, 
+New Zealand. paul.docherty@canterbury.ac.nz.
+(3)Institute for Technical Medicine, Furtwangen University, 
+Villingen-Schwenningen, Germany. paul.docherty@canterbury.ac.nz.
+(4)Diabetes Services, Health New Zealand, Canterbury, New Zealand.
+(5)School of Biomedical Sciences, Department of Physiology, Centre for 
+Neuroendocrinology, University of Otago, Dunedin, New Zealand.
+Polycystic ovary syndrome (PCOS) is a heterogenous condition that is estimated 
+to effect up to 21% of reproductive aged people with ovaries. In previous work, 
+a dataset of PCOS features was derived from approximately 100,000 PCOS subreddit 
+users via machine learning. In this study, an exploration of treatment response 
+within the PCOS subreddit was undertaken with the derived dataset. The treatment 
+or symptom features in the dataset had sentiment labels indicating when a 
+treatment was perceived to improve or worsen a condition or symptom. When 
+different features were mentioned within two sentences of each other without 
+conflicting sentiment, it could be assumed that they were related. This 
+assumption allowed for a broad analysis of the perceived effect of popular 
+treatments on the most frequently mentioned symptoms. In general, lifestyle 
+changes and supplements were the most positively regarded, while contraceptives 
+were frequently associated with considerable negative sentiment. For PCOS weight 
+loss, unspecified dieting (RR 5.19, 95% CI 3.28-8.19, n = 99) and intermittent 
+fasting (RR 33.50, 95% CI 8.54-131.34, n = 69) were the most successful 
+interventions. Inositol was associated with a large range of favourable outcomes 
+and was one of the few treatments associated with improved mental health 
+[depression (RR 4.25, 95% CI 1.72-10.51, n = 21), anxiety (RR 5.83, 95% CI 
+2.76-12.35, n = 41) and mood issues (RR 25.00, 95% CI 3.65-171.10, n = 26)]. 
+Combined oral contraceptive pills as a whole were strongly associated with 
+adverse effects such as worsening depression (RR 0.06, 95% CI 0.02-0.25, 
+n = 33), anxiety (RR 0.10, 95% CI 0.03-0.36, n = 23), fatigue (RR 0, n = 45) and 
+low libido (RR 0.03, 95% CI 0.01-0.24, n = 30). However, combined contraceptives 
+with anti-androgenic progestins were associated with more favourable 
+experiences. This study demonstrates the utility of machine learning to derive 
+measurable patient experience data from an internet forum. While patient 
+experience data derived using machine learning is not a substitute for 
+traditional clinical trials, it is useful for mass validation and hypothesis 
+generation. This paper may serve as the first exploration into this category of 
+clinical internet forum research.
+© 2025. The Author(s).
+DOI: 10.1007/s13246-025-01539-9
+PMID: 40227526
+Conflict of interest statement: Declarations. Conflict of interests: The authors 
+have not disclosed any competing interests.
