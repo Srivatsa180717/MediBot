@@ -37,6 +37,7 @@ async def get_pubmed_abstracts():
             with open("C:/temp/pubmed_data.txt", "w", encoding="utf-8") as f:
                 f.write("\n".join(abstracts))
                 print("File written to C:/temp/pubmed_data.txt")  # Debug: Confirm write
+                #You need to tranfer the txt file from temp folder to your project directory
     except Exception as e:
         print(f"Error: {e}")  # Debug: Catch any exception
     return {"count": len(abstracts), "sample": abstracts[0] if abstracts else "No abstract has been found"}
