@@ -1,11 +1,13 @@
 from fastapi import FastAPI
-from Bio import Entrez
+from Bio import Entrez, Medline
 import os
+import logging
 
 app = FastAPI()
 
-# Set your email for PubMed API
-Entrez.email = "vatsaa99@gmail.com"
+# Logging setup
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 @app.get("/")
 async def read_root():
@@ -13,31 +15,47 @@ async def read_root():
 
 @app.get("/pubmed")
 async def get_pubmed_abstracts():
+    Entrez.email = "vatsaa99@gmail.com"  # Required for NCBI API access
+
     try:
-        # Search PubMed for diabetes articles
-        handle = Entrez.esearch(db="pubmed", term="diabetes", retmax=10)
-        record = Entrez.read(handle)
-        handle.close()
-        print(f"Found {len(record['IdList'])} IDs")  # Debug: Check ID count
+        # Search PubMed for relevant articles
+        search_handle = Entrez.esearch(db="pubmed", term="diabetes", retmax=10)
+        search_results = Entrez.read(search_handle)
+        search_handle.close()
+
+        ids = search_results.get("IdList", [])
+        logger.info(f"Found {len(ids)} article IDs")
+
         abstracts = []
-        if record["IdList"]:
-            ids = record["IdList"]
-            handle = Entrez.efetch(db="pubmed", id=",".join(ids), rettype="abstract", retmode="text")
-            data = handle.read().split("\n")
-            handle.close()
-            print(f"Raw data split into {len(data)} chunks")  # Debug: Check split result
-            # Basic preprocessing: strip whitespace
-            for abstract in data:
-                if abstract.strip():
-                    abstracts.append(abstract.strip())
-            print(f"Processed {len(abstracts)} abstracts")  # Debug: Check final count
-            # Save to a local file
-            if not os.path.exists("C:/temp"):
-                os.makedirs("C:/temp")
-            with open("C:/temp/pubmed_data.txt", "w", encoding="utf-8") as f:
-                f.write("\n".join(abstracts))
-                print("File written to C:/temp/pubmed_data.txt")  # Debug: Confirm write
-                #You need to tranfer the txt file from temp folder to your project directory
+
+        if ids:
+            # Fetch full records in MEDLINE format (structured and clean)
+            fetch_handle = Entrez.efetch(db="pubmed", id=",".join(ids), rettype="medline", retmode="text")
+            records = Medline.parse(fetch_handle)
+
+            for record in records:
+                title = record.get("TI", "").strip()
+                abstract = record.get("AB", "").strip()
+                if abstract:
+                    full_text = f"{title}\n\n{abstract}"
+                    abstracts.append(full_text)
+            fetch_handle.close()
+
+        logger.info(f"Processed {len(abstracts)} abstracts")
+
+        # Save to file
+        output_dir = "C:/temp"
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = os.path.join(output_dir, "pubmed_data.txt")
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write("\n\n---\n\n".join(abstracts))
+        logger.info(f"Saved abstracts to {output_path}")
+
+        return {
+            "count": len(abstracts),
+            "sample": abstracts[0] if abstracts else "No abstract found"
+        }
+
     except Exception as e:
-        print(f"Error: {e}")  # Debug: Catch any exception
-    return {"count": len(abstracts), "sample": abstracts[0] if abstracts else "No abstract has been found"}
+        logger.error(f"Error fetching PubMed data: {e}")
+        return {"error": str(e)}
