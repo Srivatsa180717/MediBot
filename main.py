@@ -1,8 +1,10 @@
 import nltk
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Form
+from fastapi.responses import HTMLResponse
 from Bio import Entrez, Medline
 import logging
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
@@ -34,12 +36,15 @@ def setup_nltk():
 # Run NLTK setup when the app starts
 setup_nltk()
 
-@app.get("/")
-async def read_root():
-    return {"message": "Hello, This is MediBot! Welcome to your first web application!"}
+# Set up Jinja2 templates with the correct folder name
+templates = Jinja2Templates(directory="Templates")
 
-@app.get("/pubmed")
-async def get_pubmed_abstracts(term: str = "cancer"):
+@app.get("/", response_class=HTMLResponse)
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "results": [], "term": "", "count": 0})
+
+@app.get("/pubmed", response_class=HTMLResponse)
+async def get_pubmed_abstracts(request: Request, term: str = "diabetes"):
     logger.info("Fetching PubMed abstracts for term: %s", term)
     Entrez.email = "vatsaa99@gmail.com"
 
@@ -74,20 +79,21 @@ async def get_pubmed_abstracts(term: str = "cancer"):
                             abstracts.append({"title": title, "abstract": abstract, "summary": summary})
                         except Exception as e:
                             logger.error(f"Failed to process abstract for {title}: {e}")
-                            raise  # Propagate the error for a proper response
+                            raise
                     else:
                         logger.warning(f"No abstract for article: {title}")
                         abstracts.append({"title": title, "abstract": "No abstract available", "summary": "None"})
 
         if not abstracts:
             logger.warning("No abstracts found")
-            return {"count": 0, "results": [{"message": "No abstracts found"}]}
+            return templates.TemplateResponse("index.html", {"request": request, "results": [{"message": "No abstracts found"}], "term": term, "count": 0})
 
-        return {
-            "count": len(abstracts),
-            "results": abstracts
-        }
+        return templates.TemplateResponse("index.html", {"request": request, "results": abstracts, "term": term, "count": len(abstracts)})
 
     except Exception as e:
         logger.error(f"Error fetching PubMed data: {e}")
-        return {"error": str(e)}
+        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": str(e)}], "term": term, "count": 0})
+
+@app.post("/pubmed", response_class=HTMLResponse)
+async def search_pubmed(request: Request, term: str = Form(...)):
+    return await get_pubmed_abstracts(request, term)
