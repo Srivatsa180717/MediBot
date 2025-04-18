@@ -52,10 +52,27 @@
 
         .search-form {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            /* Changed to column */
             align-items: center;
+            /* Center horizontally */
             margin-bottom: 2rem;
+        }
+
+        .search-form .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            width: 100%;
+        }
+
+        .search-form .description {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            width: 100%; /* Full width */
         }
 
         .search-form input[type="text"] {
@@ -64,7 +81,13 @@
             border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
-            /* Consistent size */
+        }
+
+        .search-form select {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
         }
 
         .search-form button {
@@ -103,13 +126,11 @@
         .result-item h3 {
             font-size: 1.5rem;
             color: #e44d26;
-            /* Orange-red */
             margin-bottom: 0.75rem;
         }
 
         .result-item p {
             font-size: 1.05rem;
-            /* Slightly larger text */
             color: #444;
         }
 
@@ -123,7 +144,6 @@
 
         .loading {
             color: #555;
-            /* Gray color */
             font-style: italic;
         }
 
@@ -160,11 +180,19 @@
     <div class="container">
         <h1>MediBot - PubMed Search</h1>
         <div class="search-form">
-            <form action="/pubmed" method="post">
-                <input type="text" name="term" value="{{ term }}" placeholder="Enter search term (e.g., diabetes)"
-                    required>
-                <button type="submit">Search</button>
-            </form>
+            <div class="description">Summary in :</div>
+            <div class="input-group">
+                <form action="/pubmed" method="post">
+                    <input type="text" name="term" value="{{ term }}" placeholder="Enter search term (e.g., diabetes)"
+                        required>
+                    <select name="sentences">
+                        <option value="1" {% if sentences == 1 %}selected{% endif %}>1 sentence</option>
+                        <option value="2" {% if sentences == 2 %}selected{% endif %}>2 sentences</option>
+                        <option value="3" {% if sentences == 3 %}selected{% endif %}>3 sentences</option>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
         </div>
         <div class="results">
             {% if count > 0 %}
