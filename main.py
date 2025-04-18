@@ -44,8 +44,8 @@ async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "results": [], "term": "", "count": 0})
 
 @app.get("/pubmed", response_class=HTMLResponse)
-async def get_pubmed_abstracts(request: Request, term: str = "diabetes"):
-    logger.info("Fetching PubMed abstracts for term: %s", term)
+async def get_pubmed_abstracts(request: Request, term: str = "diabetes", sentences: int = 2):
+    logger.info("Fetching PubMed abstracts for term: %s with %d sentences", term, sentences)
     Entrez.email = "vatsaa99@gmail.com"
 
     try:
@@ -74,8 +74,8 @@ async def get_pubmed_abstracts(request: Request, term: str = "diabetes"):
                             abstract_clean = " ".join(abstract.split())
 
                             # Use NLTK sent_tokenize for summarization
-                            sentences = nltk.sent_tokenize(abstract_clean)
-                            summary = " ".join(sentences[:2]) if len(sentences) > 1 else "Summary unavailable"
+                            sentences_list = nltk.sent_tokenize(abstract_clean)
+                            summary = " ".join(sentences_list[:sentences]) if len(sentences_list) >= sentences else "Summary unavailable"
                             abstracts.append({"title": title, "abstract": abstract, "summary": summary})
                         except Exception as e:
                             logger.error(f"Failed to process abstract for {title}: {e}")
@@ -95,5 +95,5 @@ async def get_pubmed_abstracts(request: Request, term: str = "diabetes"):
         return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": str(e)}], "term": term, "count": 0})
 
 @app.post("/pubmed", response_class=HTMLResponse)
-async def search_pubmed(request: Request, term: str = Form(...)):
-    return await get_pubmed_abstracts(request, term)
+async def search_pubmed(request: Request, term: str = Form(...), sentences: int = Form(2)):
+    return await get_pubmed_abstracts(request, term, sentences)
