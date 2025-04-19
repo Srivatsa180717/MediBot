@@ -6,9 +6,12 @@ from Bio import Entrez, Medline
 import logging
 from fastapi.templating import Jinja2Templates
 
-app = FastAPI()
-
-logging.basicConfig(level=logging.INFO)
+# Configure logging with fallback to console only (no file for now)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]
+)
 logger = logging.getLogger(__name__)
 
 # --- NLTK Setup ---
@@ -20,7 +23,7 @@ def setup_nltk():
             print(f"NLTK '{resource}' resource already available.")
         except LookupError:
             print(f"Downloading '{resource}' resource...")
-            nltk.download(resource)
+            nltk.download(resource, download_dir="C:/nltk_data")  # Explicit download directory
         finally:
             nltk.data.path.append("C:/nltk_data")
             print("NLTK Data Path:", nltk.data.path)
@@ -30,7 +33,7 @@ def setup_nltk():
             nltk.data.load(f'tokenizers/{resource}/english.pickle')
             print(f"NLTK '{resource}' tokenizer loaded successfully.")
         except Exception as e:
-            print(f"Error loading '{resource}' tokenizer: {e}")
+            logger.error(f"Error loading '{resource}' tokenizer: {e}")
             raise
 
 # Run NLTK setup when the app starts
@@ -39,9 +42,11 @@ setup_nltk()
 # Set up Jinja2 templates with the correct folder name
 templates = Jinja2Templates(directory="Templates")
 
+app = FastAPI()
+
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "results": [], "term": "", "count": 0})
+    return templates.TemplateResponse("index.html", {"request": request, "results": [], "term": "", "count": 0, "sentences": 2})
 
 @app.get("/pubmed", response_class=HTMLResponse)
 async def get_pubmed_abstracts(request: Request, term: str = "diabetes", sentences: int = 2):
@@ -86,14 +91,20 @@ async def get_pubmed_abstracts(request: Request, term: str = "diabetes", sentenc
 
         if not abstracts:
             logger.warning("No abstracts found")
-            return templates.TemplateResponse("index.html", {"request": request, "results": [{"message": "No abstracts found"}], "term": term, "count": 0})
+            return templates.TemplateResponse("index.html", {"request": request, "results": [{"message": "No abstracts found"}], "term": term, "count": 0, "sentences": sentences})
 
-        return templates.TemplateResponse("index.html", {"request": request, "results": abstracts, "term": term, "count": len(abstracts)})
+        return templates.TemplateResponse("index.html", {"request": request, "results": abstracts, "term": term, "count": len(abstracts), "sentences": sentences})
 
     except Exception as e:
         logger.error(f"Error fetching PubMed data: {e}")
-        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": str(e)}], "term": term, "count": 0})
+        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": str(e)}], "term": term, "count": 0, "sentences": sentences})
 
 @app.post("/pubmed", response_class=HTMLResponse)
 async def search_pubmed(request: Request, term: str = Form(...), sentences: int = Form(2)):
+    # Input validation
+    if not term or not term.strip():
+        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": "Please enter a search term"}], "term": "", "count": 0, "sentences": sentences})
+    if sentences < 1 or sentences > 3:
+        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": "Number of sentences must be between 1 and 3"}], "term": term, "count": 0, "sentences": 2})
+
     return await get_pubmed_abstracts(request, term, sentences)
