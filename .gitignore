@@ -172,3 +172,33 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# === MediBot Project Specific ===
+
+# Logs
+mediBot.log
+
+# Secret API keys
+.env
+
+# Frontend localStorage backups (if exported)
+*.localStorage.json
+
+# Backup scripts
+*.bak
+*.txt
+
+# FAISS and dataset artifacts
+faiss_medquad.index
+qa_pairs.json
+
+# Static site data (if dynamically generated)
+static/
+
+# IDE clutter (VS Code, PyCharm, etc. — if not already covered)
+.vscode/
+.idea/
+
+# Remove temporary backup files
+main_.py.txt
+
