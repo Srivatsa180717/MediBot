@@ -1,110 +1,137 @@
-import nltk
 import os
+import json
+import faiss
+import numpy as np
+from sentence_transformers import SentenceTransformer
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
-from Bio import Entrez, Medline
-import logging
 from fastapi.templating import Jinja2Templates
+from openai import OpenAI
+from dotenv import load_dotenv
+import logging
 
-# Configure logging with fallback to console only (no file for now)
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[logging.StreamHandler()]
-)
+# Set up logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# --- NLTK Setup ---
-def setup_nltk():
-    resources_to_download = ['punkt']
-    for resource in resources_to_download:
-        try:
-            nltk.data.find(f'tokenizers/{resource}/english.pickle')
-            print(f"NLTK '{resource}' resource already available.")
-        except LookupError:
-            print(f"Downloading '{resource}' resource...")
-            nltk.download(resource, download_dir="C:/nltk_data")  # Explicit download directory
-        finally:
-            nltk.data.path.append("C:/nltk_data")
-            print("NLTK Data Path:", nltk.data.path)
+# Load API key from .env
+load_dotenv()
+api_key = os.getenv("MISTRAL_API_KEY")
+logger.info("Loaded API key: %s", "Success" if api_key else "Not found")
 
-    for resource in resources_to_download:
-        try:
-            nltk.data.load(f'tokenizers/{resource}/english.pickle')
-            print(f"NLTK '{resource}' tokenizer loaded successfully.")
-        except Exception as e:
-            logger.error(f"Error loading '{resource}' tokenizer: {e}")
-            raise
-
-# Run NLTK setup when the app starts
-setup_nltk()
-
-# Set up Jinja2 templates with the correct folder name
+# Initialize FastAPI and Jinja2
+app = FastAPI()
 templates = Jinja2Templates(directory="Templates")
 
-app = FastAPI()
+# Load SentenceTransformer model
+embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Load FAISS index and QA pairs
+logger.info("Loading FAISS index and qa_pairs.json...")
+faiss_index = faiss.read_index("faiss_medquad.index")
+with open("qa_pairs.json", "r", encoding="utf-8") as f:
+    qa_pairs = json.load(f)
+logger.info(f"Loaded {len(qa_pairs)} QAs.")
+
+# Initialize Mistral client with error handling
+try:
+    client = OpenAI(
+        api_key=api_key,
+        base_url="https://api.mistral.ai/v1"
+    )
+    logger.info("Mistral client initialized successfully")
+except Exception as e:
+    logger.error(f"Failed to initialize Mistral client: {e}")
+    client = None
 
 @app.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "results": [], "term": "", "count": 0, "sentences": 2})
+async def home(request: Request):
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "term": "",
+        "summary": "",
+    })
 
-@app.get("/pubmed", response_class=HTMLResponse)
-async def get_pubmed_abstracts(request: Request, term: str = "diabetes", sentences: int = 2):
-    logger.info("Fetching PubMed abstracts for term: %s with %d sentences", term, sentences)
-    Entrez.email = "vatsaa99@gmail.com"
+@app.post("/qa", response_class=HTMLResponse)
+async def handle_qa(request: Request, term: str = Form(...)):
+    if not term.strip():
+        logger.warning("Empty query received")
+        return templates.TemplateResponse("index.html", {
+            "request": request,
+            "error": "Please enter a valid question.",
+            "term": "",
+            "summary": "",
+        })
 
+    logger.info(f"Processing query: {term}")
+    
     try:
-        # Search PubMed
-        search_handle = Entrez.esearch(db="pubmed", term=term, retmax=10)
-        search_results = Entrez.read(search_handle)
-        search_handle.close()
+        # Embed the query
+        query_embedding = embedding_model.encode([term]).astype("float32")
+        _, indices = faiss_index.search(query_embedding, k=5)
+        logger.info(f"Found {len(indices[0])} relevant documents")
 
-        ids = search_results.get("IdList", [])
-        logger.info(f"Found {len(ids)} article IDs for term: {term}")
+        # Build context from top results
+        context = ""
+        for idx in indices[0]:
+            if idx < len(qa_pairs):
+                q = qa_pairs[idx]["question"]
+                a = qa_pairs[idx]["answer"]
+                context += f"Q: {q}\nA: {a}\n\n"
+        
+        logger.info("Context built successfully")
 
-        abstracts = []
+        # Prepare prompt
+        prompt = f"You are a helpful medical assistant. Use the context below to answer the user's question.\n\n{context}\nUser: {term}\nAssistant:"
 
-        if ids:
-            # Fetch abstracts with proper resource management
-            with Entrez.efetch(db="pubmed", id=",".join(ids), rettype="medline", retmode="text") as fetch_handle:
-                records = Medline.parse(fetch_handle)
-
-                for record in records:
-                    title = record.get("TI", "").strip()
-                    abstract = record.get("AB", "").strip()
-
-                    if abstract:
-                        try:
-                            # Preprocess abstract to remove extra newlines
-                            abstract_clean = " ".join(abstract.split())
-
-                            # Use NLTK sent_tokenize for summarization
-                            sentences_list = nltk.sent_tokenize(abstract_clean)
-                            summary = " ".join(sentences_list[:sentences]) if len(sentences_list) >= sentences else "Summary unavailable"
-                            abstracts.append({"title": title, "abstract": abstract, "summary": summary})
-                        except Exception as e:
-                            logger.error(f"Failed to process abstract for {title}: {e}")
-                            raise
-                    else:
-                        logger.warning(f"No abstract for article: {title}")
-                        abstracts.append({"title": title, "abstract": "No abstract available", "summary": "None"})
-
-        if not abstracts:
-            logger.warning("No abstracts found")
-            return templates.TemplateResponse("index.html", {"request": request, "results": [{"message": "No abstracts found"}], "term": term, "count": 0, "sentences": sentences})
-
-        return templates.TemplateResponse("index.html", {"request": request, "results": abstracts, "term": term, "count": len(abstracts), "sentences": sentences})
-
+        # Call Mistral API with robust error handling
+        if not client:
+            logger.error("Mistral client not initialized")
+            return templates.TemplateResponse("index.html", {
+                "request": request,
+                "term": term,
+                "summary": "System error: API client not initialized properly.",
+            })
+            
+        try:
+            logger.info("Calling Mistral API...")
+            response = client.chat.completions.create(
+                model="mistral-small-latest",
+                messages=[
+                    {"role": "system", "content": "You are a helpful medical assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.5,
+                max_tokens=500
+            )
+            
+            summary = response.choices[0].message.content.strip()
+            logger.info("Successfully received API response")
+            
+            # For debugging
+            logger.info(f"API response content: {summary[:100]}...")
+            
+            if not summary:
+                logger.warning("Empty response from API")
+                summary = "I couldn't generate a response. Please try a different question."
+                
+        except Exception as e:
+            logger.error(f"API Error: {str(e)}")
+            # More specific error message for debugging
+            summary = f"I'm having trouble connecting to my knowledge base. Error: {str(e)}"
+            
+        # Return the response
+        logger.info("Returning response to template")
+        return templates.TemplateResponse("index.html", {
+            "request": request,
+            "term": term,
+            "summary": summary,
+        })
+        
     except Exception as e:
-        logger.error(f"Error fetching PubMed data: {e}")
-        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": str(e)}], "term": term, "count": 0, "sentences": sentences})
-
-@app.post("/pubmed", response_class=HTMLResponse)
-async def search_pubmed(request: Request, term: str = Form(...), sentences: int = Form(2)):
-    # Input validation
-    if not term or not term.strip():
-        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": "Please enter a search term"}], "term": "", "count": 0, "sentences": sentences})
-    if sentences < 1 or sentences > 3:
-        return templates.TemplateResponse("index.html", {"request": request, "results": [{"error": "Number of sentences must be between 1 and 3"}], "term": term, "count": 0, "sentences": 2})
-
-    return await get_pubmed_abstracts(request, term, sentences)
+        logger.error(f"General error: {str(e)}")
+        return templates.TemplateResponse("index.html", {
+            "request": request,
+            "term": term,
+            "summary": f"An error occurred: {str(e)}",
+        })
