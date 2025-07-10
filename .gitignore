@@ -186,7 +186,9 @@ mediBot.log
 
 # Backup scripts
 *.bak
-*.txt
+# Ignore only backup or temp files, not requirements.txt
+*.backup.txt
+*.notes.txt
 
 # FAISS and dataset artifacts
 faiss_medquad.index
