@@ -206,3 +206,7 @@ main_.py.txt
 
 1.3.8/
 
+# Ignore test_mistral script (not used)
+test_mistral.py
+
+
