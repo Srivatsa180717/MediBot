@@ -26,21 +26,26 @@ MediBot is a lightweight medical chatbot that answers user questions using seman
 
 ---
 
-## 🗂️ Project Structure
+## 📁 Project Structure
 
-├── main.py # FastAPI backend logic
-├── prepare_medquad.py # Script to generate FAISS index and JSON
-├── faiss_medquad.index # Precomputed FAISS index (can be regenerated)
-├── qa_pairs.json # Extracted Q&A pairs from MedQuAD
-├── Templates/
-│ └── index.html # Frontend chat UI
-├── static/
-│ ├── chat-demo.png # Screenshot of UI
-│ └── startup.png # Screenshot of terminal
-├── .env.example # Template for your Mistral API key
-├── .gitignore # Git ignore rules
-├── requirements.txt # Python dependencies
-└── README.md # This file
+<pre>
+
+├── main.py                  # FastAPI backend logic  
+├── prepare_medquad.py       # Script to generate FAISS index and JSON  
+├── faiss_medquad.index      # Precomputed FAISS index (can be regenerated)  
+├── qa_pairs.json            # Extracted Q&A pairs from MedQuAD  
+├── Templates/  
+│   └── index.html           # Frontend chat UI  
+├── static/  
+│   ├── chat-demo.png        # Screenshot of UI  
+│   └── startup.png          # Screenshot of terminal  
+├── .env.example             # Template for your Mistral API key  
+├── .gitignore               # Git ignore rules  
+├── requirements.txt         # Python dependencies  
+└── README.md                # This file  
+
+</pre>
+
 
 ---
 
@@ -51,47 +56,72 @@ MediBot is a lightweight medical chatbot that answers user questions using seman
 ```bash
 git clone https://github.com/yourusername/MediBot.git
 cd MediBot
+```
 
-2. Create and Activate a Virtual Environment
+### 2. Create and Activate a Virtual Environment
 
+```bash
+# On Windows:
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
 
-3. Install Dependencies
+# On macOS/Linux:
+python3 -m venv venv
+source venv/bin/activate
+```
 
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-🔐 API Key Setup
+---
 
-Create a .env file based on .env.example and add your Mistral API key:
+## 🔐 API Key Setup
+
+Create a `.env` file based on `.env.example` and add your Mistral API key:
+
+```env
 MISTRAL_API_KEY=your-mistral-api-key-here
+```
 
-▶️ Run the App
+---
 
+## ▶️ Run the App
+
+```bash
 uvicorn main:app --reload
-Then open: http://127.0.0.1:8000
+```
 
-🧪 Regenerate FAISS Index (Optional)
+Then open: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-To rebuild the faiss_medquad.index and qa_pairs.json:
+---
+
+## 🧪 Regenerate FAISS Index (Optional)
+
+```bash
 python prepare_medquad.py
+```
+
 Make sure the MedQuAD data is present in the correct directory format.
 
-🧰 Technologies Used
+---
 
-FastAPI
+## 🧰 Technologies Used
 
-FAISS
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [FAISS](https://github.com/facebookresearch/faiss)
+- [SentenceTransformers](https://www.sbert.net/)
+- [Mistral API](https://docs.mistral.ai/)
+- HTML, CSS, JavaScript (no frontend framework)
 
-SentenceTransformers
+---
 
-Mistral API
 
-HTML, CSS, JavaScript (no frontend framework)
+## 🙋‍♂️ Author & Credits
 
-🙋‍♂️ Author & Credits
-
-Created by Srivatsa Adharapurapu
+Created by [Srivatsa Adharapurapu](https://github.com/Srivatsa180717)
 
 ### Dataset Attribution
 
@@ -99,7 +129,14 @@ This project uses the [MedQuAD Dataset](https://github.com/abachaa/MedQuAD.git) 
 
 Changes: Preprocessing, QA pair generation and Vector embedding using Sentence Transformers were performed for project purposes.
 
-🛡 License
+### Model Attribution
 
-This project is licensed under the MIT License
+- **Mistral AI** – https://mistral.ai/  
+- **SentenceTransformer “all‑MiniLM‑L6‑v2”** – https://www.sbert.net/
+
+---
+
+## 🛡 License
+
+This project is licensed under the [MIT License](LICENSE)
 
