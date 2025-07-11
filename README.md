@@ -1,32 +1,32 @@
-# 🩺 MediBot – Medical Q&A Chatbot Using FAISS and Mistral AI
+#  MediBot – Medical Q&A Chatbot Using FAISS and Mistral AI
 
 MediBot is a lightweight medical chatbot that answers user questions using semantic search over the **MedQuAD dataset** and AI-generated responses from **Mistral**. It uses a **FAISS index** to retrieve the most relevant Q&A context and builds prompts dynamically for high-quality answers.
 
 ---
 
-## 📸 Demo
+##  Demo
 
-### 💬 Chat UI
+###  Chat UI
 
 ![MediBot Chat UI](static/chat-demo.png)
 
-### 💻 Terminal Startup
+###  Terminal Startup
 
 ![MediBot Running](static/startup.png)
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🔍 FAISS-powered semantic search over the MedQuAD dataset
-- 📚 Uses `sentence-transformers` for embedding queries and Q&As
-- 💬 Simple, responsive chat interface with HTML/CSS/JS
-- ⚡ FastAPI backend for performance
-- 🔐 Secure API key handling via `.env`
+-  FAISS-powered semantic search over the MedQuAD dataset
+-  Uses `sentence-transformers` for embedding queries and Q&As
+-  Simple, responsive chat interface with HTML/CSS/JS
+-  FastAPI backend for performance
+-  Secure API key handling via `.env`
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 <pre>
 
@@ -49,7 +49,7 @@ MediBot is a lightweight medical chatbot that answers user questions using seman
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔐 API Key Setup
+##  API Key Setup
 
 Create a `.env` file based on `.env.example` and add your Mistral API key:
 
@@ -88,7 +88,7 @@ MISTRAL_API_KEY=your-mistral-api-key-here
 
 ---
 
-## ▶️ Run the App
+##  Run the App
 
 ```bash
 uvicorn main:app --reload
@@ -98,7 +98,7 @@ Then open: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ---
 
-## 🧪 Regenerate FAISS Index (Optional)
+##  Regenerate FAISS Index (Optional)
 
 ```bash
 python prepare_medquad.py
@@ -108,7 +108,7 @@ Make sure the MedQuAD data is present in the correct directory format.
 
 ---
 
-## 🧰 Technologies Used
+##  Technologies Used
 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [FAISS](https://github.com/facebookresearch/faiss)
@@ -119,7 +119,7 @@ Make sure the MedQuAD data is present in the correct directory format.
 ---
 
 
-## 🙋‍♂️ Author & Credits
+##  Author & Credits
 
 Created by [Srivatsa Adharapurapu](https://github.com/Srivatsa180717)
 
@@ -136,7 +136,7 @@ Changes: Preprocessing, QA pair generation and Vector embedding using Sentence T
 
 ---
 
-## 🛡 License
+##  License
 
 This project is licensed under the [MIT License](LICENSE)
 
